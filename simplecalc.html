@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+
+    <script>
+        function insert(num){
+           document.form.textview.value=document.form.textview.value+num;
+        }
+
+        function equal(){
+            var exp= document.form.textview.value;
+            if(exp){
+            document.form.textview.value=eval(exp);
+            }
+
+        }
+
+        function clr(){
+        
+           document.getElementById("result").value="";
+        }
+
+        function back(){
+            var exp= document.form.textview.value;
+            document.form.textview.value=exp.substring(0,exp.length-1)
+        }
+
+        
+    </script>
+    <style>
+        *{
+		
+            margin:0;
+            padding:0;
+			
+        }
+		
+		body{
+			background-size: cover;
+			background-image:url("data:image/jpeg;base64,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");
+		}
+        h1{
+            text-align: center;
+            color:#FDF6F6;
+            margin : 50px;
+        }
+        .button{
+            width:50px;
+            height:50px;
+            font-size: 25px;
+            margin:2px;
+            cursor: pointer;
+            background: rgb(148, 23, 110);
+            border: none;
+            color:white;
+        }
+        .textview{
+            width:208px;            
+            margin: 5px;
+            font-size: 25px;
+            padding:5px; 
+           border :none;
+            background-color:grey; 
+            color:white;
+        }
+        .main{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+       }
+
+    </style>
+</head>
+
+<body>
+    <div class="bg" ></div>
+    <h1>SIMPLE CALCULATOR</h1>   
+<div class="main">
+       
+        <form name="form">
+            <input class="textview" name="textview" id="result"/>
+        </form>
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="C" onclick="clr()"> </td>
+                <td><input class="button" type="button" value="<" onclick="back()"> </td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"> </td>
+                <td><input class="button" type="button" value="*" onclick="insert('*')"> </td>
+            </tr>
+
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"> </td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"> </td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"> </td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"> </td>
+            </tr>
+
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"> </td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"> </td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"> </td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"> </td>
+            </tr>
+
+            <tr>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"> </td>
+                <td><input class="button" type="button" value="2" onclick="insert(2)"> </td>
+                <td><input class="button" type="button" value="3" onclick="insert(3)"> </td>
+                <td rowspan=5><input class="button" type="button" style="height: 107px" value="=" onclick="equal()"> </td>
+            </tr>
+            <tr>
+                <td colspan=2><input class="button" type="button" style="width: 107px" value="0" onclick="insert(0)"> </td>
+                <td><input class="button" type="button" value="." onclick="insert('.')"> </td>
+                
+            </tr>
+        </table>
+</div>  
+</body>
+</html>
